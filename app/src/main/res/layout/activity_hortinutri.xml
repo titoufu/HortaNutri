@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/agriao"
+    android:backgroundTintMode="multiply"
+    android:hapticFeedbackEnabled="true"
+    android:textAlignment="center"
+    app:layout_goneMarginEnd="50dp"
+    app:layout_goneMarginStart="50dp"
+    tools:context=".Hortinutri">
+
+
+    <TextView
+        android:id="@+id/shapeTop"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="48dp"
+        android:background="@drawable/retangulo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/id_TxtCapacidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="Capacidade [litros]:"
+        android:textAlignment="textEnd"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/shapeTop"
+        app:layout_constraintTop_toTopOf="@+id/shapeTop" />
+
+    <Spinner
+        android:id="@+id/id_spinnerCapac"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textAlignment="textStart"
+        app:layout_constraintBottom_toBottomOf="@+id/id_TxtCapacidade"
+        app:layout_constraintStart_toEndOf="@+id/id_TxtCapacidade"
+        app:layout_constraintTop_toTopOf="@+id/id_TxtCapacidade"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/id_TxtHortalica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hortaliça:"
+        android:textAlignment="textEnd"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/Id_TxtValorMedido"
+        app:layout_constraintEnd_toEndOf="@+id/id_TxtCapacidade"
+        app:layout_constraintTop_toBottomOf="@+id/id_TxtCapacidade" />
+
+    <Spinner
+        android:id="@+id/id_spinnerHortalica"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        app:layout_constraintBottom_toBottomOf="@+id/id_TxtHortalica"
+        app:layout_constraintStart_toStartOf="@+id/id_spinnerCapac"
+        app:layout_constraintTop_toTopOf="@+id/id_TxtHortalica"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/Id_TxtValorMedido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="@string/eletrocontudividade"
+        android:textAlignment="textEnd"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/shapeTop"
+        app:layout_constraintEnd_toEndOf="@+id/id_TxtHortalica" />
+
+    <Spinner
+        android:id="@+id/id_spinnerValorMedido"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/Id_TxtValorMedido"
+        app:layout_constraintStart_toStartOf="@+id/id_spinnerHortalica"
+        app:layout_constraintTop_toTopOf="@+id/Id_TxtValorMedido"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/id_buttonCalcular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="calculaNutrientes"
+        android:text="CALCULAR"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        app:backgroundTint="#070E00"
+        app:layout_constraintBottom_toTopOf="@+id/shapeBotton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shapeTop"
+        app:layout_constraintVertical_bias="0.496" />
+
+    <TextView
+        android:id="@+id/shapeBotton"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="68dp"
+        android:background="@drawable/retangulo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/Id_Txtnutr1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="32dp"
+        android:gravity="end"
+        android:text="HidrogoodFert:"
+        android:textAlignment="textEnd"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/shapeBotton"
+        app:layout_constraintTop_toTopOf="@+id/shapeBotton" />
+
+    <TextView
+        android:id="@+id/id_TxtValorNutr01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:gravity="start"
+        android:textAlignment="textEnd"
+        android:textColor="#DDEA22"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/Id_Txtnutr1"
+        app:layout_constraintStart_toEndOf="@+id/Id_Txtnutr1"
+        app:layout_constraintTop_toTopOf="@+id/Id_Txtnutr1"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/id_TxtValorNutr02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:gravity="start"
+        android:textAlignment="textEnd"
+        android:textColor="#DDEA22"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/Id_Txtnutr2"
+        app:layout_constraintStart_toEndOf="@+id/Id_Txtnutr2"
+        app:layout_constraintTop_toTopOf="@+id/Id_Txtnutr2"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/id_TxtValorNutr03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:gravity="start"
+        android:textAlignment="textEnd"
+        android:textColor="#DDEA22"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/Id_Txtnutr3"
+        app:layout_constraintStart_toEndOf="@+id/Id_Txtnutr3"
+        app:layout_constraintTop_toTopOf="@+id/Id_Txtnutr3"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/Id_Txtnutr2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:text="Nitrato de Cálcio:"
+        android:textAlignment="textEnd"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/Id_Txtnutr3"
+        app:layout_constraintEnd_toEndOf="@+id/Id_Txtnutr1"
+        app:layout_constraintTop_toBottomOf="@+id/Id_Txtnutr1" />
+
+    <TextView
+        android:id="@+id/Id_Txtnutr3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:gravity="end"
+        android:text="Ferro EDDHA:"
+        android:textAlignment="textEnd"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/shapeBotton"
+        app:layout_constraintEnd_toEndOf="@+id/Id_Txtnutr2" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
